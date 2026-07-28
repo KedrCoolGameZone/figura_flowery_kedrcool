@@ -44,6 +44,26 @@ local modelToggle = mainPage:newAction()
 	:toggleItem("minecraft:lever")
 	:hoverColor(1, 1, 1)
 	:setOnToggle(pings.toggleSFX)
+	
+-- BECOME FLOWER
+function pings.toggleFlower(state)
+	models.model.model:setVisible(not state)
+	models.model.Flower:setVisible(state)
+	if state == true then
+		renderer:setShadowRadius(0.2)
+	else
+		renderer:setShadowRadius(0.5)
+	end
+end
+
+-- BECOME FLOWER ICON
+local modelToggle = mainPage:newAction()
+	:title("Flowerify")
+	:toggleTitle("Humanify")
+	:item("minecraft:dandelion")
+	:toggleItem("minecraft:player_head")
+	:hoverColor(1, 1, 1)
+	:setOnToggle(pings.toggleFlower)
 
 -- -- MANTLE
 -- function pings.toggleMantle(state)
