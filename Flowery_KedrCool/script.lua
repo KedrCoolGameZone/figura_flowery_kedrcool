@@ -65,19 +65,19 @@ local modelToggle = mainPage:newAction()
 	:hoverColor(1, 1, 1)
 	:setOnToggle(pings.toggleFlower)
 
--- -- MANTLE
--- function pings.toggleMantle(state)
-	-- models.model.model.Body.torso.mantle_nooutline:setVisible(not state)
--- end
+-- MANTLE
+function pings.toggleMantle(state)
+	models.model.model.Body.torso.mantle_nooutline:setVisible(state)
+end
 
--- -- MANTLE ICON
--- local modelToggle = mainPage:newAction()
-	-- :title("Mantle")
-	-- :toggleTitle("Unmantle")
-	-- :item("minecraft:egg")
-	-- :toggleItem("minecraft:leather_helmet")
-	-- :hoverColor(1, 1, 1)
-	-- :setOnToggle(pings.toggleMantle)
+-- MANTLE ICON
+local modelToggle = mainPage:newAction()
+	:title("Mantle")
+	:toggleTitle("Unmantle")
+	:item("minecraft:leather")
+	:toggleItem("minecraft:feather")
+	:hoverColor(1, 1, 1)
+	:setOnToggle(pings.toggleMantle)
 
 function events.render(delta, context)
 -- voice clips toggle. i tried putting this in a tick event but it still played like the first bit of the sounds?
